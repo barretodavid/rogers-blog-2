@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
@@ -13,10 +13,10 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit() {
     this.contactForm = this.fb.group({
-      firstName: [''],
-      lastName: [''],
-      email: [''],
-      message: [''],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
 
@@ -26,5 +26,21 @@ export class ContactFormComponent implements OnInit {
 
   onReset() {
     this.contactForm.reset();
+  }
+
+  get firstName() {
+    return this.contactForm.get('firstName');
+  }
+
+  get lastName() {
+    return this.contactForm.get('lastName');
+  }
+
+  get email() {
+    return this.contactForm.get('email');
+  }
+
+  get message() {
+    return this.contactForm.get('message');
   }
 }
