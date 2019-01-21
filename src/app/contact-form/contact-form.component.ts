@@ -12,12 +12,7 @@ export class ContactFormComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.contactForm = this.fb.group({
-      firstName: [''],
-      lastName: [''],
-      email: [''],
-      message: [''],
-    });
+    this.contactForm = this.fb.group({ firstName: [''], lastName: [''], email: [''], message: [''], });
   }
 
   onSubmit() {
