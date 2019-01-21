@@ -13,7 +13,8 @@ import {
   MatIconModule,
   MatListModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatCardModule,
 } from '@angular/material';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { HomeComponent } from './home/home.component';
@@ -37,6 +38,7 @@ import { HomeComponent } from './home/home.component';
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
