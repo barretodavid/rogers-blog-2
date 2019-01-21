@@ -28,7 +28,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     NavigationComponent,
     CreatePostComponent,
     HomeComponent,
-    ContactFormComponent
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +46,6 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
