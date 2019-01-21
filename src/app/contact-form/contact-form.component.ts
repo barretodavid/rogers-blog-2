@@ -1,18 +1,24 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
-  selector: 'app-contact-form',
-  templateUrl: './contact-form.component.html',
+  selector: "app-contact-form",
+  templateUrl: "./contact-form.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactFormComponent implements OnInit {
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.contactForm = this.fb.group({ firstName: [''], lastName: [''], email: [''], message: [''], });
+    this.contactForm = this.fb.group({
+      firstName: [""],
+      lastName: [""],
+      email: [""],
+      message: [""]
+    });
+    // comment
   }
 
   onSubmit() {
@@ -22,5 +28,4 @@ export class ContactFormComponent implements OnInit {
   onReset() {
     this.contactForm.reset();
   }
-
 }
