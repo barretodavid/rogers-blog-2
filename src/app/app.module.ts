@@ -20,13 +20,15 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { HomeComponent } from './home/home.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     CreatePostComponent,
-    HomeComponent
+    HomeComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

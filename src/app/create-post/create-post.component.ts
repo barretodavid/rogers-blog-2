@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-create-post',
   templateUrl: './create-post.component.html',
-  styleUrls: ['./create-post.component.scss'],
 })
 export class CreatePostComponent implements OnInit {
   postForm: FormGroup;
@@ -13,8 +12,8 @@ export class CreatePostComponent implements OnInit {
 
   ngOnInit() {
     this.postForm = this.fb.group({
-      title: ['Default Title'],
-      content: ['Default Content'],
+      title: [''],
+      content: [''],
     });
   }
 
