@@ -18,7 +18,6 @@ export class ContactFormComponent implements OnInit {
       email: [''],
       message: [''],
     });
-    // comment 2
   }
 
   onSubmit() {

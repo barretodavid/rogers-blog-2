@@ -11,10 +11,7 @@ export class CreatePostComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.postForm = this.fb.group({
-      title: [''],
-      content: [''],
-    });
+    this.postForm = this.fb.group({ title: [''], content: [''] });
   }
 
   onSubmit() {
@@ -24,5 +21,4 @@ export class CreatePostComponent implements OnInit {
   onReset() {
     this.postForm.reset();
   }
-
 }
