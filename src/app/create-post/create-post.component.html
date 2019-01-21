@@ -1,18 +1,25 @@
-<mat-card>
-  <mat-card-title>Create Blog Post</mat-card-title>
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-title>Create Blog Post</mat-card-title>
 
-  <mat-card-content class="row">
-    <mat-form-field>
-      <input matInput placeholder="Blog post title" />
-    </mat-form-field>
+    <mat-card-content class="row">
+      <mat-form-field>
+        <input matInput
+          placeholder="Blog post title"
+          formControlName="title" />
+      </mat-form-field>
 
-    <mat-form-field class="row">
-      <textarea matInput placeholder="Blog post content"></textarea>
-    </mat-form-field>
-  </mat-card-content>
+      <mat-form-field class="row">
+        <textarea matInput
+          placeholder="Blog post content"
+          formControlName="content">
+        </textarea>
+      </mat-form-field>
+    </mat-card-content>
 
-  <mat-card-actions>
-    <button mat-raised-button color="primary">Save</button>
-    <button mat-raised-button>Clear</button>
-  </mat-card-actions>
-</mat-card>
+    <mat-card-actions>
+      <button type="submit" mat-raised-button color="primary">Save</button>
+      <button type="button" (click)="onReset()" mat-raised-button>Clear</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
