@@ -17,7 +17,7 @@
   },
   "lint-staged": {
     "*.{ts,json,scss,md}": [
-      "prettier --write",
+      "prettier --write --single-quote --trailing-comma all",
       "git add"
     ]
   },
