@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { Post, State } from '../store/models';
 import { Store, createFeatureSelector, select } from '@ngrx/store';
 import { Observable } from 'rxjs';

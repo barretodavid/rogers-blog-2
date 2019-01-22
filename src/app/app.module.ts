@@ -28,6 +28,8 @@ import { reducers, metaReducers } from './store/root.reducer';
 
 import { environment } from '../environments/environment';
 import { ListMessagesComponent } from './list-messages/list-messages.component';
+import { PostSummaryComponent } from './post-summary/post-summary.component';
+import { MessageSummaryComponent } from './message-summary/message-summary.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { ListMessagesComponent } from './list-messages/list-messages.component';
     ListPostsComponent,
     CreateMessageComponent,
     ListMessagesComponent,
+    PostSummaryComponent,
+    MessageSummaryComponent,
   ],
   imports: [
     BrowserModule,

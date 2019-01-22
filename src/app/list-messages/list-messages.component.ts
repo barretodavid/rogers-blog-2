@@ -17,8 +17,4 @@ export class ListMessagesComponent implements OnInit {
   ngOnInit() {
     this.messages$ = this.store.pipe(select(selectMessages));
   }
-
-  getFullName(message: Message): string {
-    return `${message.firstName} ${message.lastName}`;
-  }
 }
