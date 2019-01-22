@@ -14,6 +14,8 @@ const initialPosts: Post[] = [
     content: 'Some new info about the Angular',
   },
   { id: uuid4(), title: 'Redux', content: 'Your database in the frontend' },
+  { id: uuid4(), title: 'Webpack', content: 'Something about webpack' },
+  { id: uuid4(), title: 'React', content: 'Angular vs React' },
 ];
 
 export function postsReducer(

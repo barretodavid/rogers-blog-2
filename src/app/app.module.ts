@@ -30,6 +30,7 @@ import { environment } from '../environments/environment';
 import { ListMessagesComponent } from './list-messages/list-messages.component';
 import { PostSummaryComponent } from './post-summary/post-summary.component';
 import { MessageSummaryComponent } from './message-summary/message-summary.component';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { MessageSummaryComponent } from './message-summary/message-summary.compo
     MatCardModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
+    StoreRouterConnectingModule.forRoot(),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],

@@ -1,7 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Post, State } from '../store/models';
-import { DeletePostAction } from '../store/posts.actions';
-import { Store } from '@ngrx/store';
+import { Post } from '../store/models';
 
 @Component({
   selector: 'app-post-summary',

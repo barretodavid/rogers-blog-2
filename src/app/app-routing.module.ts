@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: 'posts', component: ListPostsComponent },
   { path: 'create-post', component: CreatePostComponent },
+  { path: 'edit-post/:id', component: CreatePostComponent },
   { path: 'messages', component: ListMessagesComponent },
   { path: 'create-message', component: CreateMessageComponent },
 ];

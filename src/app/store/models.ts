@@ -1,3 +1,5 @@
+import { RouterReducerState } from '@ngrx/router-store';
+
 export interface Post {
   id: string;
   title: string;
@@ -15,4 +17,5 @@ export interface Message {
 export interface State {
   posts: Post[];
   messages: Message[];
+  router: RouterReducerState;
 }
