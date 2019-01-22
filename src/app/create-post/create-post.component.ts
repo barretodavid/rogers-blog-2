@@ -1,11 +1,14 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SavePostAction, Post, State } from '../reducers/index';
 import { Store } from '@ngrx/store';
+
+import { Post, State } from '../store/models';
+import { SavePostAction } from '../store/posts.actions';
 
 @Component({
   selector: 'app-create-post',
   templateUrl: './create-post.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreatePostComponent implements OnInit {
   postForm: FormGroup;
