@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Post, State } from '../store/models';
-import { Store } from '@ngrx/store';
+import { Store, createFeatureSelector, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+
+const selectPosts = createFeatureSelector<State, Post[]>('posts');
 
 @Component({
   selector: 'app-list-posts',
@@ -14,6 +15,6 @@ export class ListPostsComponent implements OnInit {
   constructor(private store: Store<State>) {}
 
   ngOnInit() {
-    this.posts$ = this.store.pipe(map(state => state.posts));
+    this.posts$ = this.store.pipe(select(selectPosts));
   }
 }

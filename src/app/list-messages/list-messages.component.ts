@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, createFeatureSelector, select } from '@ngrx/store';
 import { State, Message } from '../store/models';
-import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+
+const selectMessages = createFeatureSelector<State, Message[]>('messages');
 
 @Component({
   selector: 'app-list-messages',
@@ -14,7 +15,7 @@ export class ListMessagesComponent implements OnInit {
   constructor(private store: Store<State>) {}
 
   ngOnInit() {
-    this.messages$ = this.store.pipe(map(state => state.messages));
+    this.messages$ = this.store.pipe(select(selectMessages));
   }
 
   getFullName(message: Message): string {
