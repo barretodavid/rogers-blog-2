@@ -21,6 +21,10 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { HomeComponent } from './home/home.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     MatInputModule,
     MatCardModule,
     ReactiveFormsModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
   bootstrap: [AppComponent],
