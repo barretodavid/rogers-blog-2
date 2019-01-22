@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
+import uuid4 from 'uuid4';
+
 import { Post, State } from '../store/models';
 import { SavePostAction } from '../store/posts.actions';
 
@@ -24,11 +26,12 @@ export class CreatePostComponent implements OnInit {
 
   onSubmit() {
     const post: Post = {
+      id: uuid4(),
       title: this.title.value,
       content: this.content.value,
     };
 
-    const action = new SavePostAction(post);
+    const action = new SavePostAction({ post });
     this.store.dispatch(action);
   }
 
