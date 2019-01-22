@@ -6,11 +6,11 @@ import { Message, State } from '../store/models';
 import { SaveMessageAction } from '../store/messages.actions';
 
 @Component({
-  selector: 'app-contact-form',
-  templateUrl: './contact-form.component.html',
+  selector: 'app-create-message',
+  templateUrl: './create-message.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContactFormComponent implements OnInit {
+export class CreateMessageComponent implements OnInit {
   contactForm: FormGroup;
 
   constructor(private fb: FormBuilder, private store: Store<State>) {}

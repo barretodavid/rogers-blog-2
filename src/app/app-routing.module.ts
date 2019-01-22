@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { ListPostsComponent } from './list-posts/list-posts.component';
 import { CreatePostComponent } from './create-post/create-post.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+import { CreateMessageComponent } from './create-message/create-message.component';
+import { ListMessagesComponent } from './list-messages/list-messages.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'create', component: CreatePostComponent },
-  { path: 'contact', component: ContactFormComponent },
+  { path: '', redirectTo: '/posts', pathMatch: 'full' },
+  { path: 'posts', component: ListPostsComponent },
+  { path: 'create-post', component: CreatePostComponent },
+  { path: 'messages', component: ListMessagesComponent },
+  { path: 'create-message', component: CreateMessageComponent },
 ];
 
 @NgModule({

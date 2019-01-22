@@ -22,19 +22,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { CreatePostComponent } from './create-post/create-post.component';
-import { HomeComponent } from './home/home.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ListPostsComponent } from './list-posts/list-posts.component';
+import { CreateMessageComponent } from './create-message/create-message.component';
 import { reducers, metaReducers } from './store/root.reducer';
 
 import { environment } from '../environments/environment';
+import { ListMessagesComponent } from './list-messages/list-messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     CreatePostComponent,
-    HomeComponent,
-    ContactFormComponent,
+    ListPostsComponent,
+    CreateMessageComponent,
+    ListMessagesComponent,
   ],
   imports: [
     BrowserModule,
