@@ -1,3 +1,11 @@
-<p>
-  list-messages works!
-</p>
+<mat-card>
+  <mat-card-title>List Messages</mat-card-title>
+  <mat-card-content>
+    <mat-card *ngFor="let message of (messages$ | async)" class="mv2">
+      <mat-card-title>
+        {{ getFullName(message) }}
+      </mat-card-title>
+      <mat-card-content>{{ message.message }}</mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</mat-card>
