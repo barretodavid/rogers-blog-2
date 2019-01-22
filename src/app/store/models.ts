@@ -5,6 +5,7 @@ export interface Post {
 }
 
 export interface Message {
+  id: string;
   firstName: string;
   lastName: string;
   email: string;

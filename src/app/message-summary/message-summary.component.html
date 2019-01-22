@@ -5,6 +5,6 @@
   <mat-card-content>{{ message.message }}</mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary">Edit</button>
-    <button mat-raised-button color="warn">Delete</button>
+    <button mat-raised-button color="warn" (click)="onDeleteClick()">Delete</button>
   </mat-card-actions>
 </mat-card>

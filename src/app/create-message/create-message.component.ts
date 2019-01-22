@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import uuid4 from 'uuid4';
 
 import { Message, State } from '../store/models';
 import { SaveMessageAction } from '../store/messages.actions';
@@ -26,13 +27,14 @@ export class CreateMessageComponent implements OnInit {
 
   onSubmit() {
     const message: Message = {
+      id: uuid4(),
       firstName: this.firstName.value,
       lastName: this.lastName.value,
       email: this.email.value,
       message: this.message.value,
     };
 
-    const action = new SaveMessageAction(message);
+    const action = new SaveMessageAction({ message });
     this.store.dispatch(action);
   }
 
