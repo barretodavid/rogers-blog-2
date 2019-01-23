@@ -7,10 +7,9 @@ import { DeleteMessageAction } from '../store/messages.actions';
 const selectMessages = createFeatureSelector<State, Message[]>('messages');
 
 @Component({
-  selector: 'app-list-messages',
-  templateUrl: './list-messages.component.html',
+  templateUrl: './message-list.component.html',
 })
-export class ListMessagesComponent implements OnInit {
+export class MessageListComponent implements OnInit {
   messages$: Observable<Message[]>;
 
   constructor(private store: Store<State>) {}

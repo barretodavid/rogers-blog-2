@@ -7,10 +7,9 @@ import { DeletePostAction } from '../store/posts.actions';
 const selectPosts = createFeatureSelector<State, Post[]>('posts');
 
 @Component({
-  selector: 'app-list-posts',
-  templateUrl: './list-posts.component.html',
+  templateUrl: './post-list.component.html',
 })
-export class ListPostsComponent implements OnInit {
+export class PostListComponent implements OnInit {
   posts$: Observable<Post[]>;
 
   constructor(private store: Store<State>) {}

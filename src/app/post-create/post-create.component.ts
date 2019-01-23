@@ -8,11 +8,10 @@ import { Post, State } from '../store/models';
 import { SavePostAction } from '../store/posts.actions';
 
 @Component({
-  selector: 'app-create-post',
-  templateUrl: './create-post.component.html',
+  templateUrl: './post-create.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreatePostComponent implements OnInit {
+export class PostCreateComponent implements OnInit {
   postForm: FormGroup;
 
   constructor(private fb: FormBuilder, private store: Store<State>) {}

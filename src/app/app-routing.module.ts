@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListPostsComponent } from './list-posts/list-posts.component';
-import { CreatePostComponent } from './create-post/create-post.component';
-import { CreateMessageComponent } from './create-message/create-message.component';
-import { ListMessagesComponent } from './list-messages/list-messages.component';
+import { PostListComponent } from './post-list/post-list.component';
+import { PostCreateComponent } from './post-create/post-create.component';
+import { MessageCreateComponent } from './message-create/message-create.component';
+import { MessageListComponent } from './message-list/message-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
-  { path: 'posts', component: ListPostsComponent },
-  { path: 'create-post', component: CreatePostComponent },
-  { path: 'edit-post/:id', component: CreatePostComponent },
-  { path: 'messages', component: ListMessagesComponent },
-  { path: 'create-message', component: CreateMessageComponent },
+  { path: 'posts', component: PostListComponent },
+  { path: 'create-post', component: PostCreateComponent },
+  { path: 'edit-post/:id', component: PostCreateComponent },
+  { path: 'messages', component: MessageListComponent },
+  { path: 'create-message', component: MessageCreateComponent },
 ];
 
 @NgModule({

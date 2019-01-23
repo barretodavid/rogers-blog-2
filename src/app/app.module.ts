@@ -21,13 +21,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { CreatePostComponent } from './create-post/create-post.component';
-import { ListPostsComponent } from './list-posts/list-posts.component';
-import { CreateMessageComponent } from './create-message/create-message.component';
+import { PostCreateComponent } from './post-create/post-create.component';
+import { PostListComponent } from './post-list/post-list.component';
+import { MessageCreateComponent } from './message-create/message-create.component';
 import { reducers, metaReducers } from './store/root.reducer';
 
 import { environment } from '../environments/environment';
-import { ListMessagesComponent } from './list-messages/list-messages.component';
+import { MessageListComponent } from './message-list/message-list.component';
 import { PostSummaryComponent } from './post-summary/post-summary.component';
 import { MessageSummaryComponent } from './message-summary/message-summary.component';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
@@ -36,10 +36,10 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
   declarations: [
     AppComponent,
     NavigationComponent,
-    CreatePostComponent,
-    ListPostsComponent,
-    CreateMessageComponent,
-    ListMessagesComponent,
+    PostCreateComponent,
+    PostListComponent,
+    MessageCreateComponent,
+    MessageListComponent,
     PostSummaryComponent,
     MessageSummaryComponent,
   ],
