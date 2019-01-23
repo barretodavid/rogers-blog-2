@@ -1,8 +1,9 @@
 import { PostsEffect } from './posts.effect';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import {
   GetAllPostsStartAction,
   GetAllPostsSuccessAction,
+  GetAllPostsErrorAction,
 } from './posts.actions';
 
 describe('PostsEffect', () => {
@@ -24,7 +25,23 @@ describe('PostsEffect', () => {
         });
       });
       describe('when the "postsService" throws an exception', () => {
-        it('should emit the action GetAllPostsErrorAction', () => {});
+        it('should emit the action GetAllPostsErrorAction', () => {
+          const fakeActions$ = of(new GetAllPostsStartAction());
+          const fakePostsService = {
+            getAll: () => throwError(''),
+          };
+          const effect = new PostsEffect(
+            fakeActions$ as any,
+            fakePostsService as any,
+          );
+          effect.getAll$.subscribe(action => {
+            expect(action).toEqual(
+              new GetAllPostsErrorAction({
+                error: 'Failed to connect to backend',
+              }),
+            );
+          });
+        });
       });
     });
   });
