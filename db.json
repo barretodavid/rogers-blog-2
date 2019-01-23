@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": "f63f13e6-b2d6-413e-a7ed-0a6ed3ed37e1",
+      "title": "Angular 7",
+      "content": "Some new info about the Angular"
+    },
+    {
+      "id": "1167941f-5889-4965-96a7-84749a5c6da5",
+      "title": "Redux",
+      "content": "Your database in the frontend"
+    },
+    {
+      "id": "4a6e7f1f-3a5c-4bb5-a83d-9d6a4fedc367",
+      "title": "Webpack",
+      "content": "Something about webpack"
+    },
+    {
+      "id": "03c68cb4-0325-43c8-bf70-0779817f8c62",
+      "title": "React",
+      "content": "Angular vs React"
+    }
+  ],
+  "messages": [
+    {
+      "id": "8309bb7c-4374-45fa-9fff-ec3e7873e9b8",
+      "firstName": "David",
+      "lastName": "Barreto",
+      "email": "david.barreto@rangle.io",
+      "message": "This is an message from David"
+    },
+    {
+      "id": "8405bf8c-f581-484b-a579-2679b027061d",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@rangle.io",
+      "message": "This is an message from Mr Doe"
+    }
+  ]
+}
