@@ -39,7 +39,11 @@ describe('postReducer', () => {
         expect(newState.length).toEqual(3);
       });
 
-      it('should append the new post at the end of the array', () => {});
+      it('should append the new post at the end of the array', () => {
+        const newState = postsReducer(initialState, action);
+        const lastPost = newState[newState.length - 1];
+        expect(lastPost).toEqual(post);
+      });
     });
     describe('when deleting a post', () => {
       it('should return a post array with 1 item', () => {});
