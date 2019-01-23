@@ -2,7 +2,10 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { Post, State } from '../store/models';
 import { Store, createFeatureSelector, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { DeletePostAction } from '../store/posts.actions';
+import {
+  DeletePostAction,
+  GetAllPostsStartAction,
+} from '../store/posts.actions';
 
 const selectPosts = createFeatureSelector<State, Post[]>('posts');
 
@@ -16,6 +19,8 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     this.posts$ = this.store.pipe(select(selectPosts));
+    const action = new GetAllPostsStartAction();
+    this.store.dispatch(action);
   }
 
   onDelete(id: string): void {
