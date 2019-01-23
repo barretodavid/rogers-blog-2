@@ -31,6 +31,9 @@ import { MessageListComponent } from './message-list/message-list.component';
 import { PostSummaryComponent } from './post-summary/post-summary.component';
 import { MessageSummaryComponent } from './message-summary/message-summary.component';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { EffectsModule } from '@ngrx/effects';
+import { PostsEffect } from './store/posts.effect';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
@@ -59,6 +63,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     ReactiveFormsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
+    EffectsModule.forRoot([PostsEffect]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
