@@ -5,9 +5,10 @@ import {
   GetAllPostsActionType,
   GetAllPostsAction,
   GetAllPostsSuccessAction,
+  GetAllPostsErrorAction,
 } from './posts.actions';
-import { switchMap, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { switchMap, map, catchError } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class PostsEffect {
@@ -17,9 +18,16 @@ export class PostsEffect {
   getAll$: Observable<GetAllPostsAction> = this.actions$.pipe(
     ofType(GetAllPostsActionType.Start),
     switchMap(() =>
-      this.postsService
-        .getAll()
-        .pipe(map(posts => new GetAllPostsSuccessAction({ posts }))),
+      this.postsService.getAll().pipe(
+        map(posts => new GetAllPostsSuccessAction({ posts })),
+        catchError(() =>
+          of(
+            new GetAllPostsErrorAction({
+              error: 'Failed to connect to backend',
+            }),
+          ),
+        ),
+      ),
     ),
   );
 }

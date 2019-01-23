@@ -13,6 +13,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
+  MatSnackBarModule,
 } from '@angular/material';
 
 import { StoreModule } from '@ngrx/store';
@@ -60,6 +61,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatSnackBarModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),

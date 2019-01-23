@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, createFeatureSelector, select } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { State, Message } from '../store/models';
 import { Observable } from 'rxjs';
 import { DeleteMessageAction } from '../store/messages.actions';
-
-const selectMessages = createFeatureSelector<State, Message[]>('messages');
+import { selectMessages } from '../store/selectors';
 
 @Component({
   templateUrl: './message-list.component.html',

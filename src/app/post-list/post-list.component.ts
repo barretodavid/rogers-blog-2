@@ -1,13 +1,12 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Post, State } from '../store/models';
-import { Store, createFeatureSelector, select } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import {
   DeletePostAction,
   GetAllPostsStartAction,
 } from '../store/posts.actions';
-
-const selectPosts = createFeatureSelector<State, Post[]>('posts');
+import { selectPosts } from '../store/selectors';
 
 @Component({
   templateUrl: './post-list.component.html',
